@@ -31,15 +31,14 @@ void Binary_Insert_Sort(int r[],int n)
 
 int main()
 {
-	int i;
-	int num[8];
+	int i,num[8];
 	
 	printf("enter your number:\n");
 	for(i=0;i<8;i++)
 	{
-		scanf("%d ",&num[i]);
-	} 
-	Binary_Insert_Sort(num,8);
+		scanf("%d",&num[i]);
+	}	 
+	Binary_Insert_Sort(num,7);
 	
 	return 0;
 }

@@ -20,6 +20,8 @@ void Derict_Insert_Sort(int r[],int n)
 	}
 } 
 
+
+
 int main()
 {
 	int i,num[8];
