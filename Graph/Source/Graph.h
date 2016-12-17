@@ -124,7 +124,7 @@ public:
     int GetFirst(int v);         
     //获得顶点v1的邻点v2后的邻点  
     int GetNext(int v1, int v2);  
-  
+  bian
 private:  
     Vertex<NameType, DistType> *m_pVertexTable;   //顶点集  
     int m_numVertexs;//图中当前的顶点数量  
@@ -156,7 +156,7 @@ template<class NameType, class DistType>
 void Graph<NameType, DistType>::PrintGraph()  
 {  
     Edge<DistType> *pmove;  
-    for (int i=0; i<this->m_numVertexs; i++)  
+    for (int i=0; i<this->m_numVertexs; i++)  %
     {  
         cout << this->m_pVertexTable[i].m_vertexName << "->";  
         pmove = this->m_pVertexTable[i].padjEdge;  
@@ -407,7 +407,7 @@ NameType Graph<NameType, DistType>::GetVertexName(int v)
   
 }  
   
-//获得顶点v的第一个相邻顶点，如果没有就返回-1  
+// -1
 template<class NameType, class DistType>   
 int Graph<NameType, DistType>::GetFirst(int v)  
 {  
