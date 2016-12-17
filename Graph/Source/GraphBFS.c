@@ -2,13 +2,6 @@
 #include <malloc.h>
 #include <stdlib.h>
 #define MAX 20   //图可以存储的最大节点数为20；
-<<<<<<< HEAD
-struct tnode
-{
-    struct tnode * next;//指向下一个临节点
-    int data;//存放邻节点在数组中的位置
-};
-=======
 
 struct tnode
 {
@@ -16,77 +9,39 @@ struct tnode
     int post;//存放邻节点在数组中的位置
 };
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 struct node
 {
     int valu;//存放节点的值
     struct tnode * link;//指向邻节点
 };
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 struct picture
 {
     struct node nd[MAX];    //声明一个节点数组
     int count;  //图中的节点数
     char a; //建立的图的类型
 };
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 struct picture * createpicture();
 int search(struct picture *p,int value);//查找value在nd数组中的位置
 void bfs(struct picture * q,int i,int visit[]); //广度优先遍历
-void dfs(struct picture * q,int i,int visit[]);//深度优先遍历
-void traversedfs(struct picture *p);
 void traversebfs(struct picture *p);
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 int main()
 {
     char a;
     struct picture *p;
-<<<<<<< HEAD
-    p=createpicture();
-=======
     p=createpicture();//创建图
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
     while(1)
     {
         getchar();
-        printf("现在将对图进行遍历，若使用广度优先遍历，请输入a,若使用深度优先遍历请输入b，清屏请输入c,退出请输入d:\n");
+        printf("现在将对图进行遍历，若使用广度优先遍历，请输入a,清屏请输入c,退出请输入d:\n");
         scanf("%c",&a);
         if(a=='a')
         {
-<<<<<<< HEAD
-        printf("深度优先遍历如下：\n");
-        traversebfs(p);
-        }
-        if(a=='b')
-        {
-        printf("广度优先遍历如下：\n");
-        traversedfs(p);
-        }
-        if(a=='c')
-        system("cls");
-        if(a=='d')
-        exit(0);
-    }
-    return 0;
-}
-=======
 		    printf("深度优先遍历如下：\n");
 		    traversebfs(p);
-        }
-        if(a=='b')
-        {
-		    printf("广度优先遍历如下：\n");
-		    traversedfs(p);
         }
         if(a=='c')
         	system("cls");
@@ -96,7 +51,6 @@ int main()
     return 0;
 }
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 struct picture * createpicture()
 {
     int i,j,k,l;//l中存放返回的节点在数组中的位置
@@ -127,11 +81,7 @@ struct picture * createpicture()
             if(l!=-1)
             {
                 t=(struct tnode *)malloc(sizeof(struct tnode));
-<<<<<<< HEAD
-                t->data=l;
-=======
                 t->post=l;
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
                 t->next=p->nd[i].link;
                 p->nd[i].link=t;
             }
@@ -142,10 +92,7 @@ struct picture * createpicture()
     }
     return p;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 int search(struct picture *p,int value)
 {
     int i;
@@ -158,59 +105,7 @@ int search(struct picture *p,int value)
     }
     return -1;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
-void traversedfs(struct picture *p)
-{
-    int i;
-    int visit[MAX];//申明一个标志数组,将其初始值置为0,0表示该节点未被访问过，1表示该节点被访问过
-    for(i=0;i<p->count;i++)
-    {
-        visit[i]=0;
-    }
-    for(i=0;i<p->count;i++)
-    {
-        if(visit[i]==0)
-        {
-            dfs(p,i,visit);
-        }
-    }
-    //getchar();
-}
-<<<<<<< HEAD
-=======
-
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
-void dfs(struct picture * q,int i,int visit[])//i表示数组的下标值visit的下标与p中的下标是一一对应的关系
-{
-    struct tnode * w;
-    printf("%d\n",q->nd[i].valu);
-    visit[i]=1;
-    w=q->nd[i].link;
-    while(w!=NULL)
-    {
-<<<<<<< HEAD
-        if(visit[w->data]==0)
-        {
-            dfs(q,w->data,visit);
-=======
-        if(visit[w->post]==0)
-        {
-            dfs(q,w->post,visit);
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
-        }
-        else
-        {
-            w=w->next;
-        }
-    }   
-}
-<<<<<<< HEAD
-=======
-
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 void traversebfs(struct picture *p)
 {
     int i;
@@ -228,10 +123,7 @@ void traversebfs(struct picture *p)
     }
     //getchar();
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
 void bfs(struct picture * q,int i,int visit[])
 {
     struct tnode *w;
@@ -250,26 +142,14 @@ void bfs(struct picture * q,int i,int visit[])
         w=q->nd[v].link;
         while(w!=NULL)
         {
-<<<<<<< HEAD
-            if(visit[w->data]==0)
-            {
-            visit[w->data]=1;
-            printf("%d\n",q->nd[w->data].valu);
-            a[r]=w->data;
-=======
             if(visit[w->post]==0)
             {
             visit[w->post]=1;
             printf("%d\n",q->nd[w->post].valu);
             a[r]=w->post;
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
             r++;
             }
             w=w->next;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5f14e66bf164e71353b8f4e8a85ab5efa871eb1c
