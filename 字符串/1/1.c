@@ -1,21 +1,21 @@
 #include <stdio.h>
-
+#include <string.h>
 
 int CountStr(char *str,char *s)
 {
 	int count = 0;
 	char *s1,*s2;
 
-	while(*str != '/0')	//»¹Ã»ÓĞËÑÑ°µ½Ä¸´®Ä©Î² 
+	while(*str != '\0')	//æœªæœç´¢åˆ°æ¯ä¸²å°¾éƒ¨
 	{
 		s1 = str;
 		s2 = s;
-		while(*s1 == *s2 && (*s1 != '/0') && (*s2 != '/0'))
+		while(*s1 == *s2 && (*s1 != '\0') && (*s2 != '\0'))
 		{
 			s1++;
 			s2++;	
 		}
-		if(*s2 == '/0')
+		if(*s2 == '\0')
 		{
 			count++;
 		}
@@ -31,14 +31,14 @@ int main(int argc,char *argv[])
 {
 	int count;
 	char *str,*s;
-	printf("ÊäÈëÄ¸´®:");
-	scanf("%s",&str);
+	printf("è¾“å…¥æ¯ä¸²:");
+	scanf("%s",str);
 	
-	printf("ÊäÈë´ı²é×Ó´®:");
-	scanf("%s",&s);
+	printf("è¾“å…¥å­ä¸²:");
+	scanf("%s",s);
 	
 	count = CountStr(str,s);
-	printf("´ı²é×Ó´®¸öÊıÎª£º%d\n",count);
+	printf("å­ä¸²ä¸ªæ•°ä¸º%d\n",count);
 	
 	return 0; 
 } 
