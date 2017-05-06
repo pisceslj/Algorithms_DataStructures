@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 #include <algorithm>
 using namespace std;
 
@@ -9,24 +9,22 @@ struct stu {
 	int score;
 }s[100000];
 
-int c;
-bool cmp(stu a,stu b)
+bool cmp1(stu a,stu b)
 {
-	cout<<"ok1"<<endl;
-	if(c == 1)
-	{
-		cout<<"ok"<<endl;
-		return a.num < b.num;
-	}else if(c == 2){
-		return a.name < b.name;
-	}else{
-		return a.score < b.score;
-	}
+	return a.num.compare(b.num) < 0;
+}
+bool cmp2(stu a,stu b)
+{
+	return a.name.compare(b.name) < 0;
+}
+bool cmp3(stu a,stu b)
+{
+	return a.score > b.score;
 }
 
 int main()
 {
-	int n;
+	int n,c;
 	int i,j;
 	while(cin>>n>>c)
 	{
@@ -43,10 +41,18 @@ int main()
 			}	
 		}
 		if(n == 0)
-			break;	
+			break;
 	}
 	
-	//sort(s,s+n,cmp);
+	if(c == 1)
+	{
+		sort(s,s+n,cmp1);
+	}else if(c == 2)
+	{
+		sort(s,s+n,cmp2);
+	}else{
+		sort(s,s+n,cmp3);	
+	}
 	
 	for(j = 0;i<n; i++)
 	{
