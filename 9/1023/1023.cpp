@@ -19,46 +19,47 @@ bool cmp2(stu a,stu b)
 }
 bool cmp3(stu a,stu b)
 {
-	return a.score > b.score;
+	return a.score < b.score;
 }
 
 int main()
 {
 	int n,c;
 	int i,j;
+	int cnt=1;
 	while(cin>>n>>c)
 	{
-		if(n>=1 && n<=10000 && c>=1 && c <=3)
-		{
-			for(i=0; i<n; i++)
-			{
-				int score;
-				string num,name;
-	            cin>>num>>name>>score;
-				s[i].num = num;
-				s[i].name = name;
-				s[i].score = score;			
-			}	
-		}
 		if(n == 0)
 			break;
-	}
-	
-	if(c == 1)
-	{
+		for(i=0; i<n; i++)
+		{
+			int score;
+			string num,name;
+	        cin>>num>>name>>score;
+			s[i].num = num;
+			s[i].name = name;
+			s[i].score = score;			
+		}			
+		
 		sort(s,s+n,cmp1);
-	}else if(c == 2)
-	{
-		sort(s,s+n,cmp2);
-	}else{
-		sort(s,s+n,cmp3);	
-	}
+		switch(c)
+		{
+			case 1:
+			   break;	
+			case 2:
+				stable_sort(s,s+n,cmp2);
+				break;
+			case 3:
+				stable_sort(s,s+n,cmp3);
+				break;
+		}
 	
-	for(j = 0;i<n; i++)
-	{
-		cout<<"Case:"<<c<<endl;
-		cout<<s[j].num<<" "<<s[j].name<<" "<<s[j].score<<endl;
+	    cout<<"Case:"<<cnt<<endl;
+        cnt++;
+		for(j = 0;j<n; j++)
+		{	
+			cout<<s[j].num<<" "<<s[j].name<<" "<<s[j].score<<endl;
+		}
 	}
-	
 	return 0;
 }
