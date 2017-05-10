@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int n;
+	Node *ret = create();
+	while(scanf("%d",n) != EOF){
+		for(int i=0;i<n;i++){
+			
+			ret.num = 		
+		}
+	}
+}
