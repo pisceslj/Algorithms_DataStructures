@@ -1,0 +1,41 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct stu {
+     string name;
+     int age;
+     int score;
+}student[1000];
+
+bool cmp(stu a, stu b)
+{
+      if(a.score == b.score)
+      {
+            return a.name > b.name;
+      }else{
+            return a.score > b.score;
+      }
+}
+
+int main()
+{
+     int n;
+     stu buf[1000];
+     while(scanf("%d",&n) != EOF)
+     {
+            for(int i=0;i <n;++i)
+            {
+                     scanf("%s %d %d", buf[i].name,&buf[i].age,&buf[i].score);
+             }
+     } 
+
+     sort(buf,buf+n,cmp);
+
+      for(int j=0;j< n;j++)
+      {
+            printf("%s %d %d\n",buf[j].name,buf[j].age,buf[j].score);
+      }
+
+      return 0;
+}
